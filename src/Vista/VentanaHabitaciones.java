@@ -47,6 +47,11 @@ public class VentanaHabitaciones extends javax.swing.JFrame {
         btnAceptarWin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAceptarWin.setForeground(new java.awt.Color(255, 255, 255));
         btnAceptarWin.setText("Aceptar");
+        btnAceptarWin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarWinActionPerformed(evt);
+            }
+        });
 
         btnCancelarWin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnCancelarWin.setForeground(new java.awt.Color(255, 255, 255));
@@ -64,9 +69,9 @@ public class VentanaHabitaciones extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
+                        .addGap(70, 70, 70)
                         .addComponent(btnAceptarWin)
-                        .addGap(102, 102, 102)
+                        .addGap(124, 124, 124)
                         .addComponent(btnCancelarWin)))
                 .addContainerGap(84, Short.MAX_VALUE))
         );
@@ -99,6 +104,10 @@ public class VentanaHabitaciones extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAceptarWinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarWinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAceptarWinActionPerformed
 
     /**
      * @param args the command line arguments
