@@ -8,6 +8,6 @@ package Interfaz;
  *
  * @author diego
  */
-public interface ClientesI {
+public interface IClientes {
     
 }
