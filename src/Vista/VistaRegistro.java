@@ -168,10 +168,11 @@ public class VistaRegistro extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
         btnSalir.setBackground(new java.awt.Color(255, 0, 0));
-        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
         btnSalir.setText("Salir");
 
         btnGuardar.setBackground(new java.awt.Color(51, 255, 51));
+        btnGuardar.setForeground(new java.awt.Color(0, 0, 0));
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
