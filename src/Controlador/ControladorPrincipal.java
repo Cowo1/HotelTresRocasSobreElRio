@@ -2,6 +2,8 @@ package Controlador;
 
 import Modelo.ModeloPrincipal;
 import Vista.VistaHabitaciones;
+import Vista.VistaPrincipal;
+import Vista.VistaRegistroCliente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -35,6 +37,8 @@ public class ControladorPrincipal implements ActionListener, MouseListener {
             VistaHabitaciones vhabitaciones = new VistaHabitaciones();
             vhabitaciones.setVisible(true);
             modelo.getVista().dispose();
+        }if(e.getComponent().equals(modelo.getVista().mntmAgregarCliente)){
+            VistaRegistroCliente vRegistroCliente = new VistaRegistroCliente();
         }
     }
 

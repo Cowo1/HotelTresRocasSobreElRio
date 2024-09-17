@@ -13,49 +13,53 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-
-
-
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author diego
  */
-public class ControladorCliente implements ActionListener,WindowListener, MouseListener {
-    ModeloCliente modelo; 
+public class ControladorCliente implements ActionListener, WindowListener, MouseListener {
+
+    ModeloCliente modelo;
     ClientesImp implementacion = new ClientesImp();
-    
-    public ControladorCliente (ModeloCliente modelo){
+
+    public ControladorCliente(ModeloCliente modelo) {
         this.modelo = modelo;
     }
-    
-    public void actionPerformed(ActionEvent e){
-        if(e.getActionCommand().equals(modelo.getVista().btnGuardar.getActionCommand())){
-           boolean resultado;
-           ModeloCliente modelo = new ModeloCliente();
-           modelo.setCodigo(Integer.parseInt(this.modelo.getVista().txtCodigoCliente.getText()));
-           modelo.setNombre(this.modelo.getVista().txtNombre.getText());
-           modelo.setApellido(this.modelo.getVista().txtApellido.getText());
-           modelo.setDireccion(this.modelo.getVista().txtDireccion.getText());
-           modelo.setCorreo(this.modelo.getVista().txtCorreo.getText());
-           modelo.setTelefono(this.modelo.getVista().txtTelefono.getText());
-          resultado = implementacion.agregarCliente(modelo);
-           if(!resultado){
-               System.out.println("Insercion realizada con extio");
-               limpiar();
-              }else{
-               System.out.println("Hubo un problema al insertar, verifique los datos");
-           }
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getActionCommand().equals(modelo.getVista().btnGuardar.getActionCommand())) {
+            boolean resultado;
+            ModeloCliente modelo = new ModeloCliente();
+            modelo.setCodigo(Integer.parseInt(this.modelo.getVista().txtCodigoCliente.getText()));
+            modelo.setNombre(this.modelo.getVista().txtNombre.getText());
+            modelo.setApellido(this.modelo.getVista().txtApellido.getText());
+            modelo.setDireccion(this.modelo.getVista().txtDireccion.getText());
+            modelo.setCorreo(this.modelo.getVista().txtCorreo.getText());
+            modelo.setTelefono(this.modelo.getVista().txtTelefono.getText());
+            resultado = implementacion.agregarCliente(modelo);
+            if (!resultado) {
+                mostrarMensaje("Producto agregado con éxito", "Agregar Producto", JOptionPane.INFORMATION_MESSAGE); 
+                limpiar();
+            } else {
+                JOptionPane.showMessageDialog(null, "Ingrese numeros enteros para realizar la insercion correctamente", "Ocurrió un error", JOptionPane.INFORMATION_MESSAGE);
+                    modelo.getVista().txtCodigoCliente.setText("0");  
+            }
         }
     }
-    
-    public void limpiar(){
+
+    public void limpiar() {
         modelo.getVista().txtCodigoCliente.setText("");
         modelo.getVista().txtNombre.setText("");
         modelo.getVista().txtApellido.setText("");
         modelo.getVista().txtDireccion.setText("");
         modelo.getVista().txtCorreo.setText("");
         modelo.getVista().txtTelefono.setText("");
+    }
+
+    public void mostrarMensaje(String mensaje, String titulo, int tipoMensaje) {
+        JOptionPane.showMessageDialog(null, mensaje, titulo, tipoMensaje); // Muestra el mensaje
     }
 
     @Override
@@ -117,50 +121,5 @@ public class ControladorCliente implements ActionListener,WindowListener, MouseL
     public void mouseExited(MouseEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      
+
 }
