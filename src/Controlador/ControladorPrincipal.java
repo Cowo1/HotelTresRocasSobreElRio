@@ -39,6 +39,8 @@ public class ControladorPrincipal implements ActionListener, MouseListener {
             modelo.getVista().dispose();
         }if(e.getComponent().equals(modelo.getVista().mntmAgregarCliente)){
             VistaRegistroCliente vRegistroCliente = new VistaRegistroCliente();
+            vRegistroCliente.setVisible(true);
+            modelo.getVista().dispose();
         }
     }
 
