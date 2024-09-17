@@ -4,6 +4,8 @@
  */
 package Modelo;
 
+import Vista.VistaRegistroCliente;
+
 /**
  *
  * @author diego
@@ -15,7 +17,15 @@ public class ModeloCliente {
     private String Direccion;
     private String Correo;
     private String Telefono;
+    private VistaRegistroCliente vista;
 
+    public VistaRegistroCliente getVista() {
+        return vista;
+    }
+
+    public void setVista(VistaRegistroCliente vista) {
+        this.vista = vista;
+    }
     public int getCodigo() {
         return Codigo;
     }

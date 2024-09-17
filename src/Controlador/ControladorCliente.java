@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+import Implementacion.ClientesImp;
 import Modelo.ModeloCliente;
 import java.awt.ActiveEvent;
 import java.awt.event.ActionEvent;
@@ -21,56 +22,40 @@ import java.awt.event.WindowListener;
  * @author diego
  */
 public class ControladorCliente implements ActionListener,WindowListener, MouseListener {
+    ModeloCliente modelo; 
+    ClientesImp implementacion = new ClientesImp();
     
-
+    public ControladorCliente (ModeloCliente modelo){
+        this.modelo = modelo;
+    }
     
+    public void actionPerformed(ActionEvent e){
+        if(e.getActionCommand().equals(modelo.getVista().btnGuardar.getActionCommand())){
+           boolean resultado;
+           ModeloCliente modelo = new ModeloCliente();
+           modelo.setCodigo(Integer.parseInt(this.modelo.getVista().txtCodigoCliente.getText()));
+           modelo.setNombre(this.modelo.getVista().txtNombre.getText());
+           modelo.setApellido(this.modelo.getVista().txtApellido.getText());
+           modelo.setDireccion(this.modelo.getVista().txtDireccion.getText());
+           modelo.setCorreo(this.modelo.getVista().txtCorreo.getText());
+           modelo.setTelefono(this.modelo.getVista().txtTelefono.getText());
+          resultado = implementacion.agregarCliente(modelo);
+           if(!resultado){
+               System.out.println("Insercion realizada con extio");
+               limpiar();
+              }else{
+               System.out.println("Hubo un problema al insertar, verifique los datos");
+           }
+        }
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void limpiar(){
+        modelo.getVista().txtCodigoCliente.setText("");
+        modelo.getVista().txtNombre.setText("");
+        modelo.getVista().txtApellido.setText("");
+        modelo.getVista().txtDireccion.setText("");
+        modelo.getVista().txtCorreo.setText("");
+        modelo.getVista().txtTelefono.setText("");
     }
 
     @Override
@@ -133,4 +118,49 @@ public class ControladorCliente implements ActionListener,WindowListener, MouseL
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
 }
