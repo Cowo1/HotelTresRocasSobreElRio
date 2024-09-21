@@ -151,6 +151,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
      public void setControlador(ControladorPrincipal controlador){
         mntmReservar.addActionListener(controlador);
         mntmReservar.addMouseListener(controlador);
+        mntmAgregarCliente.addMouseListener(controlador);
     }
 
 }

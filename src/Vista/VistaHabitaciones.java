@@ -1,6 +1,8 @@
 
 package Vista;
 
+import Controlador.ControladorHabitaciones;
+
 public class VistaHabitaciones extends javax.swing.JFrame {
 
  
@@ -164,7 +166,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
                                     .addComponent(btnGuardar)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(btnCancelar)))
-                            .addGap(0, 82, Short.MAX_VALUE))
+                            .addGap(0, 79, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel4)
@@ -430,7 +432,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
             }
         });
     }
-
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnCancelar;
@@ -438,7 +440,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
     public javax.swing.JButton btnGuardar;
     public javax.swing.JButton btnHabitaciones;
     public javax.swing.JButton btnNuevo;
-    private javax.swing.JButton btnRegresar;
+    public javax.swing.JButton btnRegresar;
     public javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSiguiente;
     private com.toedter.calendar.JDateChooser jDateChooser1;
@@ -466,4 +468,12 @@ public class VistaHabitaciones extends javax.swing.JFrame {
     public javax.swing.JTextField txtUsuarioReg;
     public javax.swing.JTextField txtUsuarioReg1;
     // End of variables declaration//GEN-END:variables
-}
+
+  public void setControlador(ControladorHabitaciones controlador){
+       btnCancelar.addMouseListener(controlador);
+         btnCancelar.addActionListener(controlador);
+    }
+
+
+}                  
+

@@ -17,14 +17,14 @@ public class ModeloCliente {
     private String Direccion;
     private String Correo;
     private String Telefono;
-    private VistaRegistroCliente vista;
+    private VistaRegistroCliente vistaR;
 
     public VistaRegistroCliente getVista() {
-        return vista;
+        return vistaR;
     }
 
     public void setVista(VistaRegistroCliente vista) {
-        this.vista = vista;
+        this.vistaR = vistaR;
     }
     public int getCodigo() {
         return Codigo;

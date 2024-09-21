@@ -1,6 +1,8 @@
 
 package Modelo;
 
+import Vista.VistaHabitaciones;
+
 
 public class ModeloHabitaciones {
     
@@ -24,6 +26,15 @@ public class ModeloHabitaciones {
     private String btnSiguiente;
     private String btnAceptarWin;
     private String btnCancelarWin;
+    private VistaHabitaciones vista;
+
+    public VistaHabitaciones getVista() {
+        return vista;
+    }
+
+    public void setVista(VistaHabitaciones vista) {
+        this.vista = vista;
+    }
     
 
     public String getTxtUsuarioReg() {

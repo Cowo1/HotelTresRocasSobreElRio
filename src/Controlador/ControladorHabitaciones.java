@@ -2,31 +2,59 @@
 package Controlador;
 
 import Modelo.ModeloHabitaciones;
-import Vista.VistaHabitaciones;
+
+import Vista.VistaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class ControladorHabitaciones implements ActionListener{
+public class ControladorHabitaciones implements ActionListener,MouseListener{
     
-    private VistaHabitaciones viewhabit;
-    private ModeloHabitaciones modelhabit;
+   
+   private ModeloHabitaciones modelo;
     
-    public ControladorHabitaciones(VistaHabitaciones viewhabit, ModeloHabitaciones modelhabit)
-    {
-        this.viewhabit = viewhabit;
-        this.modelhabit = modelhabit;
-        this.viewhabit.btnGuardar.addActionListener(this);
-    }
+    public ControladorHabitaciones( ModeloHabitaciones modelo){
+            this.modelo = modelo;}
     
-    public void iniciar()
-    {
-        viewhabit.setTitle("Registro de Habitacion");
-        viewhabit.setLocationRelativeTo(null);
-    }
+  
+       
     
+    
+   
     public void actionPerformed(ActionEvent e)
     {
         
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        if(e.getComponent().equals(modelo.getVista().btnCancelar)){
+            VistaPrincipal vprincipal = new VistaPrincipal();
+            vprincipal.setVisible(true);
+            modelo.getVista().dispose();
+          
+        }
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
