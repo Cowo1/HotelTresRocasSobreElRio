@@ -22,9 +22,14 @@ public class ControladorHabitaciones implements ActionListener,MouseListener{
     
     
    
-    public void actionPerformed(ActionEvent e)
-    {
-        
+    public void actionPerformed(ActionEvent e){
+        VistaPrincipal vprincipal = new VistaPrincipal();
+        if(e.getActionCommand().equals(modelo.getVista().btnCancelar)){
+            vprincipal.setVisible(true);
+            modelo.getVista().dispose();
+          
+        }
+      
     }
 
     @Override
@@ -34,12 +39,7 @@ public class ControladorHabitaciones implements ActionListener,MouseListener{
 
     @Override
     public void mousePressed(MouseEvent e) {
-        if(e.getComponent().equals(modelo.getVista().btnCancelar)){
-            VistaPrincipal vprincipal = new VistaPrincipal();
-            vprincipal.setVisible(true);
-            modelo.getVista().dispose();
-          
-        }
+       
     }
 
     @Override

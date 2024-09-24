@@ -21,7 +21,7 @@ public class ControladorPrincipal implements ActionListener, MouseListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+       
     }
 
     
